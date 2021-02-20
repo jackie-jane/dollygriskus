@@ -1,4 +1,5 @@
 import { Component } from 'inferno'
+import axios from 'axios'
 import './db.json'
 
 export default class Gallery extends Component {
@@ -8,16 +9,14 @@ export default class Gallery extends Component {
       imageArray: []
     }
   }
-  componentDidMount() {
-    let db = 'db.json'
-    fetch(db).then(data => {
-      this.setState({ imageArray: data })
-    })
+  async componentDidMount() {
+    let result = await axios('db.json')
+    this.setState({ imageArray: result.data })
   }
   render() {
     return (
-      <div>
-        this is a gallery component
+      <div
+        class={'gallery'}>
       </div>
     )
   }
