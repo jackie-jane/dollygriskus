@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "inferno": "^7.4.8",
+    "inferno-devtools": "^7.4.8",
     "inferno-scripts": "7.0.4"
   },
   "scripts": {
